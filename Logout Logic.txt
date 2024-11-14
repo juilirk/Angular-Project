@@ -1,0 +1,7 @@
+// candidate-home.component.ts
+
+
+logout() {
+  localStorage.removeItem('token');
+  this.router.navigate(['/index']);
+}

@@ -1,0 +1,10 @@
+// auth.service.ts
+
+
+login(credentials: { email: string, password: string }) {
+  return this.http.post('/api/login', credentials).pipe(
+    tap((response: any) => {
+      localStorage.setItem('token', response.token);
+    })
+  );
+}

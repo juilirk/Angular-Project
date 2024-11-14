@@ -1,0 +1,10 @@
+app-routing.module.ts
+
+
+const routes: Routes = [
+  { path: 'index', component: IndexComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'candidate/home', component: CandidateHomeComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];

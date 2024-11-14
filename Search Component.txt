@@ -1,0 +1,16 @@
+// search.component.ts
+
+
+@Component({
+  selector: 'app-search',
+  template: `
+    <input type="text" placeholder="Search by name or industry" (input)="onSearch($event.target.value)">
+  `
+})
+export class SearchComponent {
+  @Output() search = new EventEmitter<string>();
+  
+  onSearch(value: string) {
+    this.search.emit(value);
+  }
+}
